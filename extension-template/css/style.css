@@ -1,11 +1,11 @@
-/* CSS HERE */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/PressStart2P.woff2") format('woff2');
+}
 
-
-/* Try: updating the background to a gradient */
-
-
-/* Try: changing the font styling of h1 or h2 elements */
-
-
-/* Try: targeting one element on a specific site and changing something about it's appearance*/
-
+h3 {
+	font-family: "Press Start 2P", cursive;
+}
