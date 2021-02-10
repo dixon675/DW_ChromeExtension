@@ -9,7 +9,7 @@
             "matches": ["<all_urls>"],
             "allFrames": true,
             "js": ["/js/jquery.js", "/js/content.js"],
-            "css": ["/css/style.css"]
+            "css": ["/css/style.css", "css/newfontcss.css"]
        }
      ],
     "action": {
@@ -19,7 +19,6 @@
         "default_popup": "popup.html"
     },
     "web_accessible_resources": [ 
-        "fonts/*.woff2",
         "images/*.jpg",
         "images/*.png" 
      ] 
