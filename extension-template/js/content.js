@@ -1,8 +1,14 @@
 console.log("Extension is running!");
 
+// modified from https://github.com/MysteryPancake/Image-Replacer/blob/master/scripts/Main.js
 
-// pixelate.js plugin, edited down to the parts I need for this extention
-// https://github.com/43081j/pixelate.js/
+replace();
 
-$('img').pixelate();
-
+function replace() {
+    console.log("entered function");
+    window.setInterval(replace, 2000);
+	var images = document.getElementsByTagName("img");
+	for (var i = 0; i < images.length; i++) {
+        $(images[i]).pixelate();       
+    }
+}
