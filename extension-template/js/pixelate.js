@@ -1,4 +1,8 @@
 /*
+ *
+ * Function taken from https://github.com/43081j/pixelate.js/
+ * edited down to bare necessity
+ *
  * pixelate.js
  * 43081j
  * Pixelate images with ease
