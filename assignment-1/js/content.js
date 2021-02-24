@@ -3,6 +3,7 @@ console.log("Extension is running!");
 // Works for the initial page load
 // $('img').pixelate();
 
+// Current attempt with event listener
 pixels();
 
 function pixels () {
@@ -23,24 +24,6 @@ function pixels () {
     }
   });
 }
-	// pixels();
-
-	// function pixels (){
-	// console.log("beginning loop");
-	// for (var i = 0; i < images.length; i++) {
- // 		$(images[i]).pixelate();
- // 		console.log("Image #");
-	// }
-// }
-
-
-// function pixels (){
-// 	console.log("beginning loop");
-// 	for (var i = 0; i < images.length; i++) {
-//  		$(images[i]).pixelate();
-//  		console.log("Image #");
-// 	}
-// }
 
 
 
@@ -70,7 +53,9 @@ function pixels () {
 // }
 
 
-// Attempt with MutationObeserver
+
+// // Attempts with MutationObeserver
+
 // const imgOnPage = document.querySelector('img');
 
 // var observer = new MutationObserver(mutations => {

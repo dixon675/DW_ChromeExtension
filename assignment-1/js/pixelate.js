@@ -1,19 +1,16 @@
 /*
- *
- * Function taken from https://github.com/43081j/pixelate.js/
- * edited down to bare necessity
- *
  * pixelate.js
  * 43081j
  * Pixelate images with ease
  * License: MIT
  */
- (function (window, $) {
+(function (window, $) {
   var pixelate = function() {
     var defaults = {
-      value: 0.2,
+      value: 0.15,
+      reveal: false,
+      revealonclick: false
     };
-
 
     var options = arguments[0] || {};
     var element = this;
@@ -44,6 +41,7 @@
 
     var imgWidth = element.width;
     var imgHeight = element.height;
+    var revealed = false;
 
     var canv = document.createElement('canvas');
     canv.width = imgWidth;
@@ -63,6 +61,44 @@
     element.style.display = 'none';
 
     elementParent.insertBefore(canv, element);
+
+    if (options.revealonclick !== false && options.revealonclick !== 'false') {
+      /*
+       * Reveal on click
+       */
+      canv.addEventListener('click', function () {
+        revealed = !revealed;
+
+        if (revealed) {
+          ctx.drawImage(element, 0, 0, imgWidth, imgHeight);
+        } else {
+          ctx.drawImage(element, 0, 0, width, height);
+          ctx.drawImage(canv, 0, 0, width, height, 0, 0, canv.width, canv.height);
+        }
+      });
+    }
+
+    if (options.reveal !== false && options.reveal !== 'false') {
+      /*
+       * Reveal on hover
+       */
+      canv.addEventListener('mouseenter', function () {
+        if (revealed) {
+          return;
+        }
+
+        ctx.drawImage(element, 0, 0, imgWidth, imgHeight);
+      });
+
+      canv.addEventListener('mouseleave', function () {
+        if (revealed) {
+          return;
+        }
+
+        ctx.drawImage(element, 0, 0, width, height);
+        ctx.drawImage(canv, 0, 0, width, height, 0, 0, canv.width, canv.height);
+      });
+    }
   };
 
   if (typeof $ === 'function') {
