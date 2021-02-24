@@ -1,27 +1,28 @@
 console.log("Extension is running!");
 
-// basic replace function taken from https://github.com/MysteryPancake/Image-Replacer/blob/master/scripts/Main.js
-// modified to work with pixelate.js function
-
 // Works for the initial page load
-$('img').pixelate();
+// $('img').pixelate();
 
-// Works for the initial page load
-// var images = document.getElementsByTagName('img');
+pixels();
 
-// for (var i = 0; i < images.length; i++) {
-//  		$(images[i]).pixelate();       
-//  	}
+function pixels () {
+	console.log('Entered function')
 
+	$('img').pixelate();
 
-document.addEventListener('DOMContentLoaded', function (){
-	console.log('listener is listening')
-	var images = document.getElementsByTagName('img');
-	
-	images.pixelate();
+	console.log('First pass')
 
+	document.addEventListener('load', function (){
+		console.log('listener is listening')
+		var image = document.querySelectorAll('img[data-pixelate]');
 
-
+    	for (var i = 0; i < img.length; i++) {
+      		image[i].addEventListener('load', function () {
+        	image[i].pixelate();
+      	});
+    }
+  });
+}
 	// pixels();
 
 	// function pixels (){
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function (){
 	// }
 // }
 
-});
 
 // function pixels (){
 // 	console.log("beginning loop");
@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function (){
 // }
 
 
+
+// basic replace function taken from https://github.com/MysteryPancake/Image-Replacer/blob/master/scripts/Main.js
+// modified to work with pixelate.js function
 
 // replace();
 
