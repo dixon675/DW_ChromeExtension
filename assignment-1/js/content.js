@@ -2,37 +2,69 @@ console.log("Extension is running!");
 
 // basic replace function taken from https://github.com/MysteryPancake/Image-Replacer/blob/master/scripts/Main.js
 // modified to work with pixelate.js function
-replace();
 
-function replace() {
-	console.log("entered function");
-	var images = document.querySelectorAll("img");
+// Works for the initial page load
+$('img').pixelate();
 
-	function addImages () {
-		console.log('adding event listener')
-		addImages.addEventListener('load', function () {
-			console.log('event listener activated')
-			images.push(document.querySelectorAll('img'));
-			replace();
-		});
-	}
+// Works for the initial page load
+// var images = document.getElementsByTagName('img');
 
-	addImages();
-	pixels(images);
-}
+// for (var i = 0; i < images.length; i++) {
+//  		$(images[i]).pixelate();       
+//  	}
 
-// function addImages () {
-// 	addImages.addEventListener('load',function () {
-// 		document.querySelectorAll('img').appendChild(images);
-// 		replace();
-// 	});
+
+document.addEventListener('DOMContentLoaded', function (){
+	console.log('listener is listening')
+	var images = document.getElementsByTagName('img');
+	
+	images.pixelate();
+
+
+
+	// pixels();
+
+	// function pixels (){
+	// console.log("beginning loop");
+	// for (var i = 0; i < images.length; i++) {
+ // 		$(images[i]).pixelate();
+ // 		console.log("Image #");
+	// }
 // }
 
-function pixels (images) {
-	for (var i = 0; i < images.length; i++) {
-		$(images[i]).pixelate();       
-	}
-}
+});
+
+// function pixels (){
+// 	console.log("beginning loop");
+// 	for (var i = 0; i < images.length; i++) {
+//  		$(images[i]).pixelate();
+//  		console.log("Image #");
+// 	}
+// }
+
+
+
+// replace();
+
+// function replace() {
+// 	console.log("entered function");
+// 	var images = [];
+// 	document.getElementsByTagName('img').addEventListener('load', addImages(images));
+
+// 	pixels(images);
+// }
+
+// function addImages (newImg) {
+// 	var newImages = document.getElementsByTagName('img');
+// 	newImg.append(newImages);
+// 	return newImg;
+// }
+
+// function pixels (images) {
+// 	for (var i = 0; i < images.length; i++) {
+// 		$(images[i]).pixelate();       
+// 	}
+// }
 
 
 // Attempt with MutationObeserver
