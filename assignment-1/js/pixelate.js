@@ -55,6 +55,7 @@
     var width = imgWidth * options.value;
     var height = imgHeight * options.value;
 
+    // Error happens on these lines
     ctx.drawImage(element, 0, 0, width, height);
     ctx.drawImage(canv, 0, 0, width, height, 0, 0, canv.width, canv.height);
 
@@ -72,6 +73,7 @@
         if (revealed) {
           ctx.drawImage(element, 0, 0, imgWidth, imgHeight);
         } else {
+
           ctx.drawImage(element, 0, 0, width, height);
           ctx.drawImage(canv, 0, 0, width, height, 0, 0, canv.width, canv.height);
         }

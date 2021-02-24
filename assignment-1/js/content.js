@@ -13,6 +13,7 @@ function pixels () {
 
 	console.log('First pass')
 
+	// Piece from pixelate.js
 	document.addEventListener('load', function (){
 		console.log('listener is listening')
 		var image = document.querySelectorAll('img[data-pixelate]');
@@ -24,7 +25,6 @@ function pixels () {
     }
   });
 }
-
 
 
 // basic replace function taken from https://github.com/MysteryPancake/Image-Replacer/blob/master/scripts/Main.js
